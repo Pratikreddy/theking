@@ -11,6 +11,14 @@ groq_models = ["llama3-8b-8192", "gemma-7b-it", "llama3-70b-8192", "mixtral-8x7b
 st.title("The Kingdom")
 st.write("**A collaborative problem-solving system with a wise King and knowledgeable Peasants.**")
 
+#sidebar
+st.sidebar.title("DAD")
+st.sidebar.write("**Created by:\n PRATIK REDDY**")
+
+
+# Set custom page configuration
+st.set_page_config(page_title="The Kingdom", page_icon="👑", layout="wide", initial_sidebar_state="expanded")
+
 # API Key Inputs (side by side)
 col1, col2 = st.columns(2)
 with col1:
