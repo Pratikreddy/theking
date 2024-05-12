@@ -91,5 +91,5 @@ if st.button("Solve Problem"):
         st.error("Please enter valid OpenAI and Groq API keys")
     else:
         final_solution = the_king(king_model, peasant_models, problem_statement)
-        st.write("**KING'S VERDICT : **")
+        st.write("""**KING's VERDICT : **""")
         st.write(final_solution)
