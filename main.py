@@ -62,6 +62,7 @@ def the_king(king_model, peasant_models, user_message):
     progress_bar = tqdm(tasks, desc="Gathering insights", unit="task")
 
     for i, model in enumerate(peasant_models):
+        print(f"Working on Peasant {i+1} with model {model}")
         progress_bar.set_description(f"Consulting Peasant {i+1}")
         if model in gpt_models:
             answers[f"Peasant {i+1} ({model})"] = openai_call(user_message, model, "You are a coder and problem solver expert", openai_api_key)
