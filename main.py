@@ -8,7 +8,7 @@ gpt_models = ["gpt-4-turbo", "gpt-4-0125-preview", "gpt-3.5-turbo-0125", "gpt-3.
 groq_models = ["llama3-8b-8192", "gemma-7b-it", "llama3-70b-8192", "mixtral-8x7b-32768"]
 
 # Streamlit UI Elements
-st.title("THE KING"
+st.title("THE KING")
 openai_api_key = st.text_input("Enter OpenAI API Key", type="password")
 groq_api_key = st.text_input("Enter Groq API Key", type="password")
 
