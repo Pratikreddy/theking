@@ -17,6 +17,7 @@ st.write("**A collaborative problem-solving system with a wise King and knowledg
 #sidebar
 st.sidebar.title("        DAD")
 st.sidebar.write("    **PRATIK REDDY**")
+st.sidebar.write("github.com/Pratikreddy")
 
 
 
