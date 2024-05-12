@@ -14,14 +14,14 @@ st.write("**A collaborative problem-solving system with wise King and knowledgea
 # API Key Inputs (side by side)
 col1, col2 = st.columns(2)
 with col1:
-    openai_api_key = st.text_input("OpenAI API Key", type="password", help="Provide your OpenAI API Key")
+    openai_api_key = st.text_input("OpenAI Key", type="password", help="Provide your OpenAI API Key")
 with col2:
-    groq_api_key = st.text_input("Groq API Key", type="password", help="Provide your Groq API Key")
+    groq_api_key = st.text_input("Groq Key", type="password", help="Provide your Groq API Key")
 
 # Model Selection
 st.subheader("Model Selection")
-king_model = st.selectbox("Select the King Model", gpt_models + groq_models, help="Select the primary (King) model")
-peasant_models = st.multiselect("Select Peasant Models", gpt_models + groq_models, help="Select models that will advise the King")
+king_model = st.selectbox("KING", gpt_models + groq_models, help="Select the primary (King) model")
+peasant_models = st.multiselect("Pesants", gpt_models + groq_models, help="Select models that will advise the King")
 
 # Problem Statement
 st.subheader("Problem Statement")
@@ -61,7 +61,8 @@ def the_king(king_model, peasant_models, user_message):
     tasks = [f"Consulting Peasant {i+1}" for i in range(len(peasant_models))]
 
     for i, model in enumerate(peasant_models):
-        st.write(f"Consulting Peasant {i+1} with model {model}...")
+        st.write("The KING has summoned the pesants"
+        st.write(f"Peasant {i+1} is {model}...")
         if model in gpt_models:
             answers[f"Peasant {i+1} ({model})"] = openai_call(user_message, model, "You are a coder and problem solver expert", openai_api_key)
         else:
@@ -70,7 +71,7 @@ def the_king(king_model, peasant_models, user_message):
     peasant_answers = "\n\n".join(f"{name}: {advice}" for name, advice in answers.items())
     king_prompt = f"Peasants Advice:\n{peasant_answers}\n\nProblem: {user_message}"
 
-    st.write("All Peasants have submitted their proposals to the King.")
+    st.write("All Peasants have submitted their due dilligence to the King.")
     st.write("The King is analyzing the problem...")
 
     if king_model in gpt_models:
