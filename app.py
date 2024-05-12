@@ -4,7 +4,7 @@ from groq import Groq
 from tqdm import tqdm
 
 # Set custom page configuration
-st.set_page_config(page_title="The Kingdom", page_icon="👑", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="PRATIK", page_icon="👑", layout="wide", initial_sidebar_state="expanded")
 
 # Available models
 gpt_models = ["gpt-4-turbo", "gpt-4-0125-preview", "gpt-3.5-turbo-0125", "gpt-3.5-turbo-instruct"]
@@ -16,7 +16,7 @@ st.write("**A collaborative problem-solving system with a wise King and knowledg
 
 #sidebar
 st.sidebar.title("        DAD")
-st.sidebar.write("**    PRATIK REDDY**")
+st.sidebar.write("    **PRATIK REDDY**")
 
 
 
