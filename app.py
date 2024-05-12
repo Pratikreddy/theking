@@ -8,8 +8,8 @@ gpt_models = ["gpt-4-turbo", "gpt-4-0125-preview", "gpt-3.5-turbo-0125", "gpt-3.
 groq_models = ["llama3-8b-8192", "gemma-7b-it", "llama3-70b-8192", "mixtral-8x7b-32768"]
 
 # Page title
-st.title("The King's Decision Support System")
-st.write("**A collaborative problem-solving system with wise King and knowledgeable Peasants.**")
+st.title("The Kingdom")
+st.write("**A collaborative problem-solving system with a wise King and knowledgeable Peasants.**")
 
 # API Key Inputs (side by side)
 col1, col2 = st.columns(2)
@@ -93,7 +93,7 @@ if st.button("Consult the King"):
     elif not peasant_models:
         st.error("Please select at least one Peasant Model.")
     else:
-        st.info("The King has summoned the Peasants")
+        #st.info("The King has summoned the Peasants")
         peasant_outputs, final_solution = the_king(king_model, peasant_models, problem_statement)
 
         # Display each Peasant's output
