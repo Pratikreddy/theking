@@ -32,7 +32,7 @@ with col2:
 # Model Selection
 st.subheader("Model Selection")
 king_model = st.selectbox("Pick your **KING**", gpt_models + groq_models, help="Select the primary (King) model")
-peasant_models = st.multiselect("Pick your Pesants", gpt_models + groq_models, help="Select models that will advise the King")
+peasant_models = st.multiselect("Pick your **Peasants**", gpt_models + groq_models, help="Select models that will advise the King")
 
 # Problem Statement
 st.subheader("Problem Statement")
