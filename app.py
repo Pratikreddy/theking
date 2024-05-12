@@ -61,7 +61,7 @@ def the_king(king_model, peasant_models, user_message):
     tasks = [f"Consulting Peasant {i+1}" for i in range(len(peasant_models))]
 
     for i, model in enumerate(peasant_models):
-        st.write("The KING has summoned the pesants"
+        st.write("The KING has summoned the pesants")
         st.write(f"Peasant {i+1} is {model}...")
         if model in gpt_models:
             answers[f"Peasant {i+1} ({model})"] = openai_call(user_message, model, "You are a coder and problem solver expert", openai_api_key)
@@ -82,7 +82,7 @@ def the_king(king_model, peasant_models, user_message):
     return answers, king_answer
 
 # Process the solution
-st.subheader("Solve the Problem")
+#st.subheader("Solve the Problem")
 if st.button("Consult the King"):
     if not problem_statement:
         st.warning("Please enter a problem statement.")
@@ -93,7 +93,7 @@ if st.button("Consult the King"):
     elif not peasant_models:
         st.error("Please select at least one Peasant Model.")
     else:
-        st.info("The King and Peasants are analyzing your problem...")
+        st.info("The King has summoned the Peasants")
         peasant_outputs, final_solution = the_king(king_model, peasant_models, problem_statement)
 
         # Display each Peasant's output
