@@ -87,14 +87,25 @@ def king_analysis(water_tribe_info, earth_tribe_info, problem_water, problem_ear
     st.write("The King is analyzing the contributions from both tribes...")
     water_answers = "\n\n".join(f"{name}: {advice}" for name, advice in water_tribe_info.items())
     earth_answers = "\n\n".join(f"{name}: {advice}" for name, advice in earth_tribe_info.items())
-    king_prompt = f"Water Tribe Advice:\n{water_answers}\n\nEarth Tribe Advice:\n{earth_answers}\n\nProblems:\nWater: {problem_water}\nEarth: {problem_earth}"
+    king_prompt = f"""
+    Problem Water: {problem_water}
+    Water Tribe Advice:
+    {water_answers}
+    
+    Problem Earth: {problem_earth}
+    Earth Tribe Advice:
+    {earth_answers}
+    
+    Your Majesty, please analyze the advice provided by both tribes on their respective problems and provide separate conclusions for each problem, as well as a combined assessment of the situation. Evaluate how well each tribe addressed its problem and suggest any additional considerations or a final decree that encompasses insights from both tribes.
+    """
 
     if king_model in gpt_models:
-        king_answer = openai_call(king_prompt, king_model, "You are a wise king deciding which tribe provided better insights.", openai_api_key)
+        king_answer = openai_call(king_prompt, king_model, "You are a wise king tasked with synthesizing advice from multiple sources to make informed decisions for the realm.", openai_api_key)
     else:
         king_answer = groq_call(king_prompt, king_model, groq_api_key)
-    
+
     return king_answer
+
 
 # Process the solution
 if st.button("Consult the King"):
