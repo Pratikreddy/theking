@@ -30,11 +30,11 @@ st.subheader("Tribe Model Selection and Problem Statements")
 col1, col2 = st.columns(2)
 with col1:
     st.write("**Water Tribe**")
-    water_tribe_models = st.multiselect("Select Water Tribe Models", gpt_models + groq_models, help="Select models for Water Tribe")
+    water_tribe_models = st.multiselect("Select Water Tribe", gpt_models + groq_models, help="Select models for Water Tribe")
     problem_water = st.text_area("Water Tribe Problem", help="Provide the problem for Water Tribe")
 with col2:
     st.write("**Earth Tribe**")
-    earth_tribe_models = st.multiselect("Select Earth Tribe Models", gpt_models + groq_models, help="Select models for Earth Tribe")
+    earth_tribe_models = st.multiselect("Select Earth Tribe", gpt_models + groq_models, help="Select models for Earth Tribe")
     problem_earth = st.text_area("Earth Tribe Problem", help="Provide the problem for Earth Tribe")
 
 # Function to call OpenAI API
