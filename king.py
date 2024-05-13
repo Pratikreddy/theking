@@ -3,7 +3,7 @@ from openai import OpenAI
 from groq import Groq
 
 # Set custom page configuration
-st.set_page_config(page_title="KING P", page_icon="👑", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="KING P2", page_icon="👑", layout="wide", initial_sidebar_state="expanded")
 
 # Available models
 gpt_models = ["gpt-4-turbo", "gpt-4-0125-preview", "gpt-3.5-turbo-0125", "gpt-3.5-turbo-instruct"]
